@@ -1,0 +1,15 @@
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.csproj.AssemblyReference.cache
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.GeneratedMSBuildEditorConfig.editorconfig
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.AssemblyInfoInputs.cache
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.AssemblyInfo.cs
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.csproj.CoreCompileInputs.cache
+/home/jose/PokemonAPIClient/bin/Debug/net6.0/PokemonAPIClient
+/home/jose/PokemonAPIClient/bin/Debug/net6.0/PokemonAPIClient.deps.json
+/home/jose/PokemonAPIClient/bin/Debug/net6.0/PokemonAPIClient.runtimeconfig.json
+/home/jose/PokemonAPIClient/bin/Debug/net6.0/PokemonAPIClient.dll
+/home/jose/PokemonAPIClient/bin/Debug/net6.0/PokemonAPIClient.pdb
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.dll
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/refint/PokemonAPIClient.dll
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.pdb
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.genruntimeconfig.cache
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/ref/PokemonAPIClient.dll
