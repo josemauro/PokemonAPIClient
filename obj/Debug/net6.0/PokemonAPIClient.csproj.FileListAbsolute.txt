@@ -13,3 +13,5 @@
 /home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.pdb
 /home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.genruntimeconfig.cache
 /home/jose/PokemonAPIClient/obj/Debug/net6.0/ref/PokemonAPIClient.dll
+/home/jose/PokemonAPIClient/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/jose/PokemonAPIClient/obj/Debug/net6.0/PokemonAPIClient.csproj.CopyComplete

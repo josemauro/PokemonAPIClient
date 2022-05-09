@@ -1,0 +1,165 @@
+[{
+  "name": "charmander",
+  "weight": 85,
+  "height": 6,
+  "type": [
+    "fire"
+  ],
+  "abilities": [
+    "blaze",
+    "solar-power"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+},
+{
+  "name": "squirtle",
+  "weight": 90,
+  "height": 5,
+  "type": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "rain-dish"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+},
+{
+  "name": "caterpie",
+  "weight": 29,
+  "height": 3,
+  "type": [
+    "bug"
+  ],
+  "abilities": [
+    "shield-dust",
+    "run-away"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png"
+},
+{
+  "name": "weedle",
+  "weight": 32,
+  "height": 3,
+  "type": [
+    "bug",
+    "poison"
+  ],
+  "abilities": [
+    "shield-dust",
+    "run-away"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png"
+},
+{
+  "name": "pidgey",
+  "weight": 18,
+  "height": 3,
+  "type": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "keen-eye",
+    "tangled-feet",
+    "big-pecks"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png"
+},
+{
+  "name": "pidgeotto",
+  "weight": 300,
+  "height": 11,
+  "type": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "keen-eye",
+    "tangled-feet",
+    "big-pecks"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png"
+},
+{
+  "name": "rattata",
+  "weight": 35,
+  "height": 3,
+  "type": [
+    "normal"
+  ],
+  "abilities": [
+    "run-away",
+    "guts",
+    "hustle"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png"
+},
+{
+  "name": "spearow",
+  "weight": 20,
+  "height": 3,
+  "type": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "keen-eye",
+    "sniper"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png"
+},
+{
+  "name": "fearow",
+  "weight": 380,
+  "height": 12,
+  "type": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "keen-eye",
+    "sniper"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png"
+},
+{
+  "name": "arbok",
+  "weight": 650,
+  "height": 35,
+  "type": [
+    "poison"
+  ],
+  "abilities": [
+    "intimidate",
+    "shed-skin",
+    "unnerve"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png"
+},
+{
+  "name": "pikachu",
+  "weight": 60,
+  "height": 4,
+  "type": [
+    "electric"
+  ],
+  "abilities": [
+    "static",
+    "lightning-rod"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+},
+{
+  "name": "sandshrew",
+  "weight": 120,
+  "height": 6,
+  "type": [
+    "ground"
+  ],
+  "abilities": [
+    "sand-veil",
+    "sand-rush"
+  ],
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png"
+}]
