@@ -18,22 +18,31 @@ namespace PokemonAPIClient
     class PokeApi {
         private static readonly HttpClient client = new HttpClient();
 
-        static async Task Main() {
+        static async Task Main(string[] argv) {
             Console.WriteLine("\n   Welcome to PokeAPI!!!!!\n\n────────▄███████████▄────────|\n─────▄███▓▓▓▓▓▓▓▓▓▓▓███▄─────\n────███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███────\n───██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██───\n──██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██──\n─██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██─\n██▓▓▓▓▓▓▓▓▓███████▓▓▓▓▓▓▓▓▓██\n██▓▓▓▓▓▓▓▓██░░░░░██▓▓▓▓▓▓▓▓██\n██▓▓▓▓▓▓▓██░░███░░██▓▓▓▓▓▓▓██\n███████████░░███░░███████████\n██░░░░░░░██░░███░░██░░░░░░░██\n██░░░░░░░░██░░░░░██░░░░░░░░██\n██░░░░░░░░░███████░░░░░░░░░██\n─██░░░░░░░░░░░░░░░░░░░░░░░██─\n──██░░░░░░░░░░░░░░░░░░░░░██──\n───██░░░░░░░░░░░░░░░░░░░██───\n────███░░░░░░░░░░░░░░░███────\n─────▀███░░░░░░░░░░░███▀─────\n────────▀███████████▀────────");
             string[] pokemonList = { "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Pidgeotto", "Rattata", "Spearow", "Fearow", "Arbok", "Pikachu", "Sandshrew"};
             using StreamWriter file = new("PokemonsInfoList.txt");
             Boolean parallel = false;
+            try{ 
+                if (argv[0].Equals("--parallel")) {
+                    parallel= true;
+                }
+            }catch (System.IndexOutOfRangeException){
+                parallel= false;
+            }
 
             file.Write('[');
 
-            if (parallel){
+            if (parallel==false){
+                Console.WriteLine("\nExecuting requests...\n\n");
                 for (int i=0; i< pokemonList.Length; i++){
                     if (i>0) {file.Write(",\n");}
                     var pokemonInfo = await GetPokemonInfo(pokemonList[i]);
                     file.Write(pokemonInfo);
                 }
             } else{
-                // batchSize defines how much requests will be made in parallel
+                Console.WriteLine("\nExecuting requests in parallel...\n\n");
+                // batchSize defines how much requests will be made in parallel using Task
                 int batchSize = 5;
                 int numberOfBatches = (int)Math.Ceiling((double)pokemonList.Length / batchSize);
                 var pokemons = new List<String>();
