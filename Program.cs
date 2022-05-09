@@ -7,12 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-/*
-1- Consumir uma lista de pokemons
-    salvar: Name, Types, Abilities, Weight, Height, Sprites
-2- Realizar consultas simultaneas
-3- Fazer download de imagem de pokemon
-*/
+
 namespace PokemonAPIClient
 {
     class PokeApi {
