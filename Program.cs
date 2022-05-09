@@ -22,16 +22,37 @@ namespace PokemonAPIClient
             Console.WriteLine("\n   Welcome to PokeAPI!!!!!\n\n────────▄███████████▄────────|\n─────▄███▓▓▓▓▓▓▓▓▓▓▓███▄─────\n────███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███────\n───██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██───\n──██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██──\n─██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██─\n██▓▓▓▓▓▓▓▓▓███████▓▓▓▓▓▓▓▓▓██\n██▓▓▓▓▓▓▓▓██░░░░░██▓▓▓▓▓▓▓▓██\n██▓▓▓▓▓▓▓██░░███░░██▓▓▓▓▓▓▓██\n███████████░░███░░███████████\n██░░░░░░░██░░███░░██░░░░░░░██\n██░░░░░░░░██░░░░░██░░░░░░░░██\n██░░░░░░░░░███████░░░░░░░░░██\n─██░░░░░░░░░░░░░░░░░░░░░░░██─\n──██░░░░░░░░░░░░░░░░░░░░░██──\n───██░░░░░░░░░░░░░░░░░░░██───\n────███░░░░░░░░░░░░░░░███────\n─────▀███░░░░░░░░░░░███▀─────\n────────▀███████████▀────────");
             string[] pokemonList = { "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Pidgeotto", "Rattata", "Spearow", "Fearow", "Arbok", "Pikachu", "Sandshrew"};
             using StreamWriter file = new("PokemonsInfoList.txt");
+            Boolean parallel = false;
 
             file.Write('[');
-            for (int i=0; i< pokemonList.Length; i++){
-                if (i>0) {file.Write(",\n");}
-                var pokemonInfo = "";
-                pokemonInfo = await GetPokemonInfo(pokemonList[i]);
-                file.Write(pokemonInfo);
+
+            if (parallel){
+                for (int i=0; i< pokemonList.Length; i++){
+                    if (i>0) {file.Write(",\n");}
+                    var pokemonInfo = await GetPokemonInfo(pokemonList[i]);
+                    file.Write(pokemonInfo);
+                }
+            } else{
+                // batchSize defines how much requests will be made in parallel
+                int batchSize = 5;
+                int numberOfBatches = (int)Math.Ceiling((double)pokemonList.Length / batchSize);
+                var pokemons = new List<String>();
+                    for(int i = 0; i < numberOfBatches; i++){
+                        var currentIds = pokemonList.Skip(i * batchSize).Take(batchSize);
+                        var tasks = currentIds.Select(id =>  GetPokemonInfo(id));
+                        pokemons.AddRange(await Task.WhenAll(tasks));
+                    }
+
+                // write the pokemons in output file
+                int cont = 0;
+                foreach (string pokemon in pokemons){
+                    if (cont > 0) {file.Write(",\n");} 
+                    cont ++;
+                    file.Write(pokemon);
+                }
             }
             file.Write(']');
-            Console.WriteLine("Done!");
+            Console.WriteLine("Done!!!!");
 
             
         }
@@ -42,6 +63,7 @@ namespace PokemonAPIClient
             // Get JSON with the information about the pokemon
             var pokemonInfo = JObject.Parse(await stringTask);
             Dictionary<string, JToken> pokemonInfoDict = new Dictionary<string, JToken>();
+
             pokemonInfoDict.Add("name", pokemonInfo["name"]);
             pokemonInfoDict.Add("weight", pokemonInfo["weight"]);
             pokemonInfoDict.Add("height", pokemonInfo["height"]);
