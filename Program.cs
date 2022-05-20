@@ -49,6 +49,17 @@ namespace PokemonAPIClient
                 }
             }
             file.Write(']');
+
+            // download pokemons pictures
+
+            // open file 'PokemonsInfoList.txt'
+            // parse file
+            // read JSON directly from a file
+            
+            file.Close();
+            JArray jsonObject = JArray.Parse(File.ReadAllText("./PokemonsInfoList.txt"));
+            Console.Write(jsonObject);
+            // request picture from each url
             Console.WriteLine("Done!!!!");
 
             
