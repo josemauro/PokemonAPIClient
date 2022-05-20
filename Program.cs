@@ -1,11 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Net.Http;
-using Func = System.Text.Json;
-
-using System.Collections.Generic;
-using System.Globalization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace PokemonAPIClient
